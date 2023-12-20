@@ -13,12 +13,12 @@ import com.example.healthcare2.adapter.PostHomeAdapter
 import com.example.healthcare2.data.model.Post
 import com.example.healthcare2.databinding.FragmentHomeBinding
 
-
 class HomeFragment : Fragment() {
-    private var binding : FragmentHomeBinding? = null
-    private lateinit var recyclerView : RecyclerView
-    private lateinit var listPostHome : List<Post>
-    private lateinit var postAdapter : PostHomeAdapter
+    private var binding: FragmentHomeBinding? = null
+    private lateinit var recyclerView: RecyclerView
+    private lateinit var listPostHome: List<Post>
+    private lateinit var postAdapter: PostHomeAdapter
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -39,15 +39,23 @@ class HomeFragment : Fragment() {
         postAdapter = PostHomeAdapter(requireContext(), listPostHome, R.layout.item_post_home)
 
         // Gán adapter cho RecyclerView
-        recyclerView.setAdapter(postAdapter)
+        recyclerView.adapter = postAdapter
+
         binding!!.cardMedicine.setOnClickListener {
             findNavController().navigate(R.id.action_homeFragment_to_medicinesFragment)
         }
+
         binding!!.cardDoctor.setOnClickListener {
             findNavController().navigate(R.id.action_homeFragment_to_listDoctorFragment)
         }
+
         binding!!.cardPost.setOnClickListener {
             findNavController().navigate(R.id.action_homeFragment_to_addPostFragment)
+        }
+
+        // Add click listener for the "Show More" button
+        binding!!.txtShowMore.setOnClickListener {
+            findNavController().navigate(R.id.action_homeFragment_to_listPostFragment)
         }
     }
 }

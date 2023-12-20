@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.healthcare2.R;
 import com.example.healthcare2.data.model.Doctor;
+import com.example.healthcare2.data.model.Post;
 import com.example.healthcare2.databinding.ItemDoctorBinding;
 
 import java.util.List;
@@ -26,6 +27,10 @@ public class DoctorAdapter extends RecyclerView.Adapter<DoctorAdapter.ViewHolder
         this.layout = layout;
         this.listTotalPost = listTotalPost;
         this.inflater = LayoutInflater.from(context);
+    }
+
+    public DoctorAdapter(Context context, List<Post> postList, int itemPostHome) {
+
     }
 
     @NonNull

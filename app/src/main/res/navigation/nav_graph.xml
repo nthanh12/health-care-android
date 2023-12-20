@@ -47,6 +47,9 @@
             app:popEnterAnim="@anim/slide_in_left"
             app:popExitAnim="@anim/slide_out_right"
             app:destination="@id/addPostFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_listPostFragment"
+            app:destination="@id/listPostFragment" />
     </fragment>
     <fragment
         android:id="@+id/onboardingFragment"
@@ -158,4 +161,12 @@
         tools:layout="@layout/fragment_list_doctor"
         android:name="com.example.healthcare2.view.ListDoctorFragment"
         android:label="ListDoctorFragment" />
+    <fragment
+        android:id="@+id/listPostFragment"
+        android:name="com.example.healthcare2.view.ListPostFragment"
+        android:label="ListPostFragment" />
+    <fragment
+        android:id="@+id/addWorkFragment"
+        android:name="com.example.healthcare2.view.AddWorkFragment"
+        android:label="AddWorkFragment" />
 </navigation>

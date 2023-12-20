@@ -20,7 +20,7 @@ public class RetrofitInstance {
                     .setDateFormat("yyyy-MM-dd HH:mm:ss")
                     .create();
             retrofit = new Retrofit.Builder()
-                    .baseUrl("http://192.168.0.102:8000/")
+                    .baseUrl("http://192.168.1.10:8000/")
                     .addConverterFactory(GsonConverterFactory.create(gson))
                     .client(builder.build())
                     .build();

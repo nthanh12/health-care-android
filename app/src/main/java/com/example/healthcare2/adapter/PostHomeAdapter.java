@@ -56,6 +56,9 @@ public class PostHomeAdapter extends RecyclerView.Adapter<PostHomeAdapter.ViewHo
         public void bind(Post post) {
             binding.txtTitle.setText(post.getTitle());
             // Set other data to binding views
+            if (post.getAuthor() != null) {
+                binding.txtAuthor.setText(post.getAuthor().getNameUser());
+            }
         }
         
     }

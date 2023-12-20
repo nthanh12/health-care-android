@@ -6,6 +6,7 @@ import com.example.healthcare2.data.model.Comment;
 import com.example.healthcare2.data.model.Doctor;
 import com.example.healthcare2.data.model.Like;
 import com.example.healthcare2.data.model.Medicine;
+import com.example.healthcare2.data.model.Post;
 import com.example.healthcare2.data.model.Rating;
 import com.example.healthcare2.data.model.User;
 import com.example.healthcare2.data.model.Work;
@@ -59,6 +60,8 @@ public interface RestApiService {
     Call<Integer> getNumPostUser(@Path("idUser") int idUser);
     @GET("listNumPostDoctor")
     Call<List<Integer>> getListNumPostDoctor();
+    @GET("listPost")
+    Call<List<Post>> getListPost();
 //  Like
     @GET("likeMedicine/{idMedicine}/{email}")
     Call<Integer> getIsLikeMedicine(@Path("idMedicine") int idMedicine, @Path("email") String email);

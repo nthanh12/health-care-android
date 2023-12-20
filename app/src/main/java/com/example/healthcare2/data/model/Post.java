@@ -6,6 +6,7 @@ import java.sql.Time;
 import java.sql.Timestamp;
 
 public class Post {
+    private User author;
     @SerializedName("idPost")
     private int idPost;
     @SerializedName("idUser")
@@ -35,6 +36,14 @@ public class Post {
         this.rating = rating;
         this.created_at = created_at;
         this.updated_at = updated_at;
+    }
+
+    public User getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(User author) {
+        this.author = author;
     }
 
     public int getIdPost() {
